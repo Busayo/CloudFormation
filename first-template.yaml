@@ -6,6 +6,8 @@ Resources:
     Properties:
       ImageId: ami-0a8dc52684ee2fee2
       InstanceType: t2.micro
+      SecurityGroupIds:
+        - Ref: WebServerSecurityGroup
       Tags:
         - Key: Name
           Value: Web Server
@@ -23,3 +25,6 @@ Resources:
       Tags:
         - Key: Name
           Value: Web Server Security Group
+  SQSQueue:
+    Type: AWS::SQS::Queue
+    DependsOn: WebServerInstance
