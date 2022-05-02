@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Template of an EC2 instance in a VPC(subnet,route table etc) reachable by icmp. Test product.
+Description: Template of an EC2 instance in a VPC(subnet,route table etc) reachable by icmp. Testing out unit tests on CF templates.
 Resources:
   MyVPC:
     Type: AWS::EC2::VPC
