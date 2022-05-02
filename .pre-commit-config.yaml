@@ -5,7 +5,7 @@ repos:
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
 -   repo: https://github.com/aws-cloudformation/cfn-python-lint
-    rev: v0.58.4  # The version of cfn-lint to use
+    rev: v0.59.0  # The version of cfn-lint to use
     hooks:
     -   id: cfn-python-lint
         files: ec2-vpc-icmp.yaml
@@ -14,6 +14,6 @@ repos:
     -   id: cfn-nag
         name: cfn-nag
         language: docker_image
-        entry: alpine/cfn-nag:latest --input-path /src
+        entry: alpine/cfn-nag:latest --input-path /src/ec2-vpc-icmp.yaml
         files: ec2-vpc-icmp.yaml
         pass_filenames: false

@@ -3,6 +3,11 @@ Description: Template of an EC2 instance in a VPC(subnet,route table etc) reacha
 Resources:
   MyVPC:
     Type: AWS::EC2::VPC
+    Metadata:
+      cfn_nag:
+        rules_to_suppress:
+          - id: W60
+            reason: "VPC doesn't need flow log"
     Properties:
       CidrBlock: 172.32.0.0/16
       Tags:
@@ -10,6 +15,11 @@ Resources:
           Value: TemplateVPC
   MySubnet:
     Type: AWS::EC2::Subnet
+    Metadata:
+      cfn_nag:
+        rules_to_suppress:
+          - id: W33
+            reason: "Subnet needs to be publically accessible"
     Properties:
       CidrBlock: 172.32.0.0/20
       MapPublicIpOnLaunch: True
