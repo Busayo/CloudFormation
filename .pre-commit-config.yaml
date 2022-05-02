@@ -8,4 +8,4 @@ repos:
     rev: v0.58.4  # The version of cfn-lint to use
     hooks:
     -   id: cfn-python-lint
-        files: /Users/busayo.akanni/Desktop/Study/CloudFormation/.*\.(json|yml|yaml)$
+        files: ec2-vpc-icmp.yaml
